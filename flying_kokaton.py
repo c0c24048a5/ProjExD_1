@@ -14,16 +14,17 @@ def main():
     kk_img = pg.image.load("fig/3.png")
     kk_img = pg.transform.flip(kk_img, True, False)
     kk_rect = kk_img.get_rect()
-    kk_rect.center = 300, 200
+    
     
 
     x = 0
     keyx = 0
     keyy = 0
+    kk_rect.center = 300, 200
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-        keyx = 0
+        keyx = -1
         keyy = 0
         
         key_lst = pg.key.get_pressed()
@@ -32,9 +33,9 @@ def main():
         if key_lst[pg.K_DOWN]:
             keyy += 1
         if key_lst[pg.K_RIGHT]:
-            keyx += 1
+            keyx += 2
         if key_lst[pg.K_LEFT]:
-            keyx -= 1
+            keyx -= 2
         kk_rect.move_ip((keyx, keyy))
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg2_img, [1600 + (-x), 0])
