@@ -18,19 +18,24 @@ def main():
     
 
     x = 0
+    keyx = 0
+    keyy = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
+        keyx = 0
+        keyy = 0
         
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
-            kk_rect.move_ip((0, -10))
+            keyy -= 1
         if key_lst[pg.K_DOWN]:
-            kk_rect.move_ip((0, 10))
+            keyy += 1
         if key_lst[pg.K_RIGHT]:
-            kk_rect.move_ip((10, 0))
+            keyx += 1
         if key_lst[pg.K_LEFT]:
-            kk_rect.move_ip((-10, 0))
+            keyy -= 1
+        kk_rect.move_ip((keyx, keyy))
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg2_img, [1600 + (-x), 0])
         screen.blit(bg_img, [3200 + (-x), 0])
