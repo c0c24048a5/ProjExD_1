@@ -34,7 +34,7 @@ def main():
         if key_lst[pg.K_RIGHT]:
             keyx += 1
         if key_lst[pg.K_LEFT]:
-            keyy -= 1
+            keyx -= 1
         kk_rect.move_ip((keyx, keyy))
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg2_img, [1600 + (-x), 0])
