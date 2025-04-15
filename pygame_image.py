@@ -20,10 +20,13 @@ def main():
 
         screen.blit(bg_img, [0, 0])
         screen.blit(bg2_img, [1600, 0])
+        screen.blit(bg_img, [3200, 0])
         screen.blit(kk_img, [x, 200])
         pg.display.update()
         x += 1        
         clock.tick(200)
+        if x == 3199:
+            x = 0
 
 
 if __name__ == "__main__":
